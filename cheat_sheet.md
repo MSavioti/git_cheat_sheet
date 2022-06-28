@@ -20,10 +20,6 @@
 
 ## Removing files
 
-### Removes a file from staging area
-
-`git rm --cached [file_relative_path]`
-
 ### Removes (deletes) a file on working directory
 
 `git rm [file_relative_path]`
@@ -46,15 +42,34 @@
 
 `git log`
 
+### Check commit history with a simplified view
+
+`git log --oneline`
+
 ## Undoing actions
 
 ### Go back to a specific commit
 
 `git checkout [commit_id]`
 
-### Revert to a specific commit and created a new commit
+### Removes a file from staging area
 
-``
+`git rm --cached [file_relative_path]`
+
+### Revert the changes added in a specific commit and created a new commit
+
+`git revert[git_id]`
+
+### Changing the message of the most recent commit
+
+`git commit --amend -m "message"`
+
+(if original commit was pushed)
+`git push --force origin [branchName]`
+
+### Remove all commits after provided commit
+
+`git reset --hard [commit_id]`
 
 ## Managing branches
 
@@ -116,3 +131,27 @@
 ### Download changes from the tracked branch
 
 `git pull`
+
+## Make git ignore files and directories
+
+Create a file named ".gitignore" on the root of your project
+
+### Ignore extensions
+
+`*.file_extension`
+
+### Ignore file
+
+`file/path.file_extension`
+
+### Ignore directory
+
+`directory/`
+
+### Ignore subdirectory
+
+`/subdirectory/`
+
+### Ignore files and directories with a specific pattern
+
+`*pattern*`
