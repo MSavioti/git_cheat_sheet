@@ -58,6 +58,10 @@
 
 ## Managing branches
 
+### List branches ans shows current branch
+
+`git branch`
+
 ### Create a new branch
 
 `git branch [branch_name]`
