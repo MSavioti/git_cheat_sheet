@@ -4,6 +4,10 @@
 
 `git init`
 
+## Link a remote repository
+
+``
+
 ## Checking changes in the working directory
 
 `git status`
