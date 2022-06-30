@@ -1,12 +1,18 @@
 # Cheat Sheet for git
 
-## Initialize repository
+## Creating or downloading a repository
+
+### Initialize repository
 
 `git init`
 
-## Link a remote repository
+### Download a remote repository
 
-``
+`git clone [remote_repository_link]`
+
+### Link to a remote repository
+
+`git remote add origin [remote_repository_link]`
 
 ## Checking changes in the working directory
 
@@ -18,17 +24,23 @@
 
 `git add [file_relative_path]`
 
-### Add all modified files
+### Add all new and modified files
 
+`git add -A`
+(Or, if you at the root of your project folder)
 `git add .`
 
-## Removing files
+### Add all modified files, but not new ones
 
-### Removes (deletes) a file on working directory
+`git add -u`
+
+## Deleting files
+
+### Deletes a file on working directory
 
 `git rm [file_relative_path]`
 
-### Removes (deletes) a file added to staging area
+### Deletes a file added to staging area
 
 `git rm -f [file_relative_path]`
 
@@ -50,13 +62,36 @@
 
 `git log --oneline`
 
+### Check commit history while improving readability
+
+`git log --decorate`
+
+### Check commit history while using ASCII elements to represent the tree
+
+`git log --graph`
+
+### Check commit history involving a desired file
+
+`git log -- [file_relative_path]`
+
 ## Undoing actions
 
 ### Go back to a specific commit
 
 `git checkout [commit_id]`
 
+### Discard changes in working directory (not added to staging area)
+
+`git checkout [file_or_directory]`
+
+(Discard all changes)
+`git checkout .`
+
 ### Removes a file from staging area
+
+`git reset HEAD [file_relative_path]`
+
+OR
 
 `git rm --cached [file_relative_path]`
 
@@ -74,6 +109,10 @@
 ### Remove all commits after provided commit
 
 `git reset --hard [commit_id]`
+
+### Rename a branch
+
+`git branch -m [branch_name] [new_branch_name]`
 
 ## Managing branches
 
@@ -136,26 +175,109 @@
 
 `git pull`
 
+### Use rebase instead of merge while issuing pull command
+
+`git pull --rebase origin [branch_name]`
+
+## Moving or renaming files with git
+
+### Renaming
+
+`git mv [file_current_name] [file_new_name]`
+
+### Moving
+
+`git mv [file_name] [directory]`
+
+## Rebase
+
+### Rebase flow
+
+On feature branch:
+`git rebase main`
+
+On main branch
+`git rebase [feature_branch_name]`
+
+### Rebase conflicts
+
+Continue rebase after conflicts are sorted out:
+`git rebase --continue`
+
+Cancel rebase operation:
+`git rebase --abort`
+
+### Rebase onto changes in remote repository
+
+`git pull --rebase origin [branch_name]`
+
+## Stash
+
+### Save (stash) work in progress
+
+`git stash`
+
+### For stash action to include untracked files
+
+`git stash -u`
+
+### Applying stashed work
+
+`git stash apply`
+
+### Deleting last stash created
+
+`git stash drop`
+
+### Apply stash while also dropping it
+
+`git stash pop`
+
+## Tags
+
+### Lightweight tag (name only)
+
+`git tag [tag_name]`
+
+### Annotated tag (contains message)
+
+`git tag -a [tag_name]`
+
+### Comparing tags
+
+`git diff [tag_name_1] [tag_name_2]`
+
+### Tagging a specific commit
+
+`git tag [tag_name_1] [commit_id]`
+
+### Transfer tag to another commit
+
+`git tag [tag_name] -f [commit_id]`
+
+### Push tags to remote repository
+
+`git push [remote] [branch] tag [tag_name]`
+
 ## Make git ignore files and directories
 
 Create a file named ".gitignore" on the root of your project
 
-### Ignore extensions
+### Ignore using patterns
 
-`*.file_extension`
+`*.example`
 
 ### Ignore file
 
-`file/path.file_extension`
+`[file_relative_path]`
 
 ### Ignore directory
 
-`directory/`
+`[directory_to_ignore]/`
 
-### Ignore subdirectory
+## Setting up a alias for a command
 
-`/subdirectory/`
+`git config --global alias.[command_name] "[actual_command]"`
 
-### Ignore files and directories with a specific pattern
-
-`*pattern*`
+E.g.: `git config --global alias.history "log --oneline --decorate --graph"`
+Usage: `git history`
