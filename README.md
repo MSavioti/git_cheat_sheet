@@ -2,15 +2,15 @@
 
 ## Creating or downloading a repository
 
-### Initialize repository
+**Initialize repository**
 
 `git init`
 
-### Download a remote repository
+**Download a remote repository**
 
 `git clone [remote_repository_link]`
 
-### Link to a remote repository
+**Link to a remote repository**
 
 `git remote add origin [remote_repository_link]`
 
@@ -20,17 +20,17 @@
 
 ## Adding files to staging area
 
-### Add a single file
+**Add a single file**
 
 `git add [file_relative_path]`
 
-### Add all new and modified files
+**Add all new and modified files**
 
 `git add -A`
 (Or, if you at the root of your project folder)
 `git add .`
 
-### Add all modified files, but not new ones
+**Add all modified files, but not new ones**
 
 `git add -u`
 
