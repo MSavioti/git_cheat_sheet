@@ -36,58 +36,58 @@
 
 ## Deleting files
 
-### Deletes a file on working directory
+**Deletes a file on working directory**
 
 `git rm [file_relative_path]`
 
-### Deletes a file added to staging area
+**Deletes a file added to staging area**
 
 `git rm -f [file_relative_path]`
 
-## Committing changes
+## Committing
 
-### Commit a file
+**Commit a file**
 
 `git commit -m [file_relative_path]`
 
-### Add all modified files to staging area and commit them (doesn't work with newly created files)
+**Add all modified files to staging area and commit them (doesn't work with newly created files)**
 
 `git commit -am [file_relative_path]`
 
-### Check commit history
+**Check commit history**
 
 `git log`
 
-### Check commit history with a simplified view
+**Check commit history with a simplified view**
 
 `git log --oneline`
 
-### Check commit history while improving readability
+**Check commit history while improving readability**
 
 `git log --decorate`
 
-### Check commit history while using ASCII elements to represent the tree
+**Check commit history while using ASCII elements to represent the tree**
 
 `git log --graph`
 
-### Check commit history involving a desired file
+**Check commit history involving a desired file**
 
 `git log -- [file_relative_path]`
 
 ## Undoing actions
 
-### Go back to a specific commit
+**Go back to a specific commit**
 
 `git checkout [commit_id]`
 
-### Discard changes in working directory (not added to staging area)
+**Discard changes in working directory (not added to staging area)**
 
 `git checkout [file_or_directory]`
 
 (Discard all changes)
 `git checkout .`
 
-### Removes a file from staging area
+**Removes a file from staging area**
 
 `git reset HEAD [file_relative_path]`
 
@@ -95,103 +95,103 @@ OR
 
 `git rm --cached [file_relative_path]`
 
-### Revert the changes added in a specific commit and created a new commit
+**Revert the changes added in a specific commit and created a new commit**
 
 `git revert[git_id]`
 
-### Changing the message of the most recent commit
+**Changing the message of the most recent commit**
 
 `git commit --amend -m "message"`
 
 (if original commit was pushed)
 `git push --force origin [branchName]`
 
-### Remove all commits after provided commit
+**Remove all commits after provided commit**
 
 `git reset --hard [commit_id]`
 
-### Rename a branch
+**Rename a branch**
 
 `git branch -m [branch_name] [new_branch_name]`
 
 ## Managing branches
 
-### List branches ans shows current branch
+**List branches ans shows current branch**
 
 `git branch`
 
-### Create a new branch
+**Create a new branch**
 
 `git branch [branch_name]`
 
-### Switch to a branch
+**Switch to a branch**
 
 `git checkout [branch_name]`
 
-### Create a new branch and switch to it
+**Create a new branch and switch to it**
 
 `git checkout -b [branch_name]`
 
-### Delete a local branch
+**Delete a local branch**
 
 `git branch -d [branch_name]`
 
-### Delete a remote branch
+**Delete a remote branch**
 
 `git branch -D branch_name`
 `git push origin :branch_name`
 
-### Merge a branch into the current branch
+**Merge a branch into the current branch**
 
 `git merge [branch_name]`
 
-### Merge a branch into another branch
+**Merge a branch into another branch**
 
 `git merge [source_branch_name] [other_branch_name]`
 
 ## Interacting with a remote repository
 
-### Save changes to a specific branch
+**Save changes to a specific branch**
 
 `git push origin [branch_name]`
 
-### Save changes to a branch and track it
+**Save changes to a branch and track it**
 
 `git push -u origin [branch name]`
 
-### Save changes to the tracked branch
+**Save changes to the tracked branch**
 
 `git push`
 
-### Download changes in remote repository
+**Download changes in remote repository**
 
 `git fetch [branch_name]`
 
-### Download changes in remote repository and merge them into the local repository
+**Download changes in remote repository and merge them into the local repository**
 
 `git pull [branch_name]`
 
-### Download changes from the tracked branch
+**Download changes from the tracked branch**
 
 `git pull`
 
-### Use rebase instead of merge while issuing pull command
+**Use rebase instead of merge while issuing pull command**
 
 `git pull --rebase origin [branch_name]`
 
 ## Moving or renaming files with git
 
-### Renaming
+**Renaming**
 
 `git mv [file_current_name] [file_new_name]`
 
-### Moving
+**Moving**
 
 `git mv [file_name] [directory]`
 
 ## Rebase
 
-### Rebase flow
+**Rebase flow**
 
 On feature branch:
 `git rebase main`
@@ -199,7 +199,7 @@ On feature branch:
 On main branch
 `git rebase [feature_branch_name]`
 
-### Rebase conflicts
+**Rebase conflicts**
 
 Continue rebase after conflicts are sorted out:
 `git rebase --continue`
@@ -207,55 +207,55 @@ Continue rebase after conflicts are sorted out:
 Cancel rebase operation:
 `git rebase --abort`
 
-### Rebase onto changes in remote repository
+**Rebase onto changes in remote repository**
 
 `git pull --rebase origin [branch_name]`
 
 ## Stash
 
-### Save (stash) work in progress
+**Save (stash) work in progress**
 
 `git stash`
 
-### For stash action to include untracked files
+**For stash action to include untracked files**
 
 `git stash -u`
 
-### Applying stashed work
+**Applying stashed work**
 
 `git stash apply`
 
-### Deleting last stash created
+**Deleting last stash created**
 
 `git stash drop`
 
-### Apply stash while also dropping it
+**Apply stash while also dropping it**
 
 `git stash pop`
 
 ## Tags
 
-### Lightweight tag (name only)
+**Lightweight tag (name only)**
 
 `git tag [tag_name]`
 
-### Annotated tag (contains message)
+**Annotated tag (contains message)**
 
 `git tag -a [tag_name]`
 
-### Comparing tags
+**Comparing tags**
 
 `git diff [tag_name_1] [tag_name_2]`
 
-### Tagging a specific commit
+**Tagging a specific commit**
 
 `git tag [tag_name_1] [commit_id]`
 
-### Transfer tag to another commit
+**Transfer tag to another commit**
 
 `git tag [tag_name] -f [commit_id]`
 
-### Push tags to remote repository
+**Push tags to remote repository**
 
 `git push [remote] [branch] tag [tag_name]`
 
@@ -263,15 +263,15 @@ Cancel rebase operation:
 
 Create a file named ".gitignore" on the root of your project
 
-### Ignore using patterns
+**Ignore using patterns**
 
 `*.example`
 
-### Ignore file
+**Ignore file**
 
 `[file_relative_path]`
 
-### Ignore directory
+**Ignore directory**
 
 `[directory_to_ignore]/`
 
