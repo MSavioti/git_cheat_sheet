@@ -232,6 +232,11 @@ Cancel rebase operation:
 **Apply stash while also dropping it**
 
  - `git stash pop`
+ 
+## Cherry pick
+
+**Takes commit from a branch and apply it into another branch**
+ - `git cherry-pick [commit_id]`
 
 ## Tags
 
