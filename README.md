@@ -36,13 +36,21 @@
 
 ## Deleting files
 
-**Deletes a file on working directory**
+**Deleting a file on working directory**
 
  - `git rm [file_relative_path]`
 
-**Deletes a file added to staging area**
+**Deleting a file added to staging area**
 
  - `git rm -f [file_relative_path]`
+
+**Deleting untracked files**
+
+ - git clean -f
+
+**Deleting untracked files inside a subfolder**
+
+ - git clean -f [directory_path]
 
 ## Committing
 
