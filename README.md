@@ -140,6 +140,10 @@ OR
 
  - `git checkout -b [branch_name]`
 
+**Create a branch from a commit**
+
+ - `git checkout -b [branch_name] [commit_SHA]`
+
 **Delete a local branch**
 
  - `git branch -d [branch_name]`
